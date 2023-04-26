@@ -9,7 +9,6 @@ namespace MVVM
     {
         public App()
         {
-
             MainPage = new NavigationPage(new FriendsListPage());
         }
 

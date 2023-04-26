@@ -10,17 +10,17 @@ namespace Mvvm.ViewModels
 {
     public class FriendsListViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<FriendViewModel> Friend { get; set; }
+        public ObservableCollection<FriendViewModel> Friends { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
-        public ICommand CreateFriendCommand { get; protected set; }
-        public ICommand DeleteFriendCommand { get; protected set; }
-        public ICommand SaveFriendCommand { get; protected set; }
-        public ICommand BackCommand { get; protected set; }
+        public ICommand CreateFriendCommand { protected set; get; }
+        public ICommand DeleteFriendCommand { protected set; get;  }
+        public ICommand SaveFriendCommand { protected set; get; }
+        public ICommand BackCommand { protected set; get; }
         FriendViewModel selectedFriend;
         public INavigation Navigation { get; set; }
         public FriendsListViewModel()
         {
-            Friend = new ObservableCollection<FriendViewModel>();
+            Friends = new ObservableCollection<FriendViewModel>();
             CreateFriendCommand = new Command(CreateFriend);
             DeleteFriendCommand = new Command(DeleteFriend);
             SaveFriendCommand = new Command(SaveFriend);
@@ -35,7 +35,7 @@ namespace Mvvm.ViewModels
                 {
                     FriendViewModel tempFriend = value;
                     selectedFriend = null;
-                    OnPropertyChaged("selectedFriend");
+                    OnPropertyChaged("SelectedFriend");
                     Navigation.PushAsync(new FriendPage(tempFriend));
                 }
             }
@@ -43,9 +43,7 @@ namespace Mvvm.ViewModels
         protected void OnPropertyChaged(string propName)
         {
             if (PropertyChanged != null)
-            {
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
-            }
         }
         private void CreateFriend()
         {
@@ -58,9 +56,9 @@ namespace Mvvm.ViewModels
         private void SaveFriend(object friendObject)
         {
             FriendViewModel friend = friendObject as FriendViewModel;
-            if (friend != null && friend.IsValid && !Friend.Contains(friend))
+            if (friend != null && friend.IsValid && !Friends.Contains(friend))
             {
-                Friend.Add(friend);
+                Friends.Add(friend);
             }
             Back();
         }
@@ -69,7 +67,7 @@ namespace Mvvm.ViewModels
             FriendViewModel friend = friendObject as FriendViewModel;
             if (friend != null)
             {
-                Friend.Remove(friend);
+                Friends.Remove(friend);
             }
             Back();
         }

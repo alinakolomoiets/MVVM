@@ -67,18 +67,17 @@ namespace Mvvm.ViewModels
         {
             get
             {
-                return ((!string.IsNullOrEmpty(Name.Trim()))) ||
-                ((!string.IsNullOrEmpty(Phone.Trim()))) ||
-                ((!string.IsNullOrEmpty(Email.Trim())));
+                return ((!string.IsNullOrEmpty(Name.Trim())) ||
+                (!string.IsNullOrEmpty(Phone.Trim())) ||
+                (!string.IsNullOrEmpty(Email.Trim())));
             }
         }
 
         protected void OnPropertyChaged(string propName)
         {
             if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propName));
-            }
+            PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            
         }
     }
 }
