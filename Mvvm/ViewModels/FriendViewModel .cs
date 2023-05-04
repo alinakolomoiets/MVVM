@@ -1,8 +1,10 @@
-﻿using Mvvm.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
+using System.ComponentModel;
+using Mvvm.Models;
+using Xamarin.Essentials;
+using static Xamarin.Essentials.Permissions;
 
 namespace Mvvm.ViewModels
 {
@@ -75,8 +77,7 @@ namespace Mvvm.ViewModels
 
         protected void OnPropertyChaged(string propName)
         {
-            if (PropertyChanged != null)
-            PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propName));
             
         }
     }

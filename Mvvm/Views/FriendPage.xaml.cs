@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mvvm.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Mvvm.ViewModels;
+
+
+
 namespace Mvvm.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

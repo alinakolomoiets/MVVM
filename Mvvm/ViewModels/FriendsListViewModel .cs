@@ -1,17 +1,20 @@
 ﻿using Mvvm.Views;
+using Mvvm.Models;
+using Mvvm.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text;
 using System.Windows.Input;
+using System.Text;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 namespace Mvvm.ViewModels
 {
     public class FriendsListViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<FriendViewModel> Friends { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public ObservableCollection<FriendViewModel> Friends { get; set; }
         public ICommand CreateFriendCommand { protected set; get; }
         public ICommand DeleteFriendCommand { protected set; get;  }
         public ICommand SaveFriendCommand { protected set; get; }
