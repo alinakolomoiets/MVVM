@@ -7,8 +7,6 @@ using Mvvm.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-
-
 namespace Mvvm.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

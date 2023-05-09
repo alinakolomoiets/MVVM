@@ -5,11 +5,11 @@
     <StackLayout>
         <StackLayout x:Name="friendStack">
             <Label Text="Имя"/>
-            <Entry Text="{Binding Name}" FontSize="Medium" TextColor="Red"/>
+            <Entry Text="{Binding Name}" FontSize="Medium" />
             <Label Text="Электронная почта" />
-            <Entry Text="{Binding Email}" FontSize="Medium" TextColor="Red"/>
+            <Entry Text="{Binding Email}" FontSize="Medium" />
             <Label Text="Телефон" />
-            <Entry Text="{Binding Phone}" FontSize="Medium" TextColor="Red"/>
+            <Entry Text="{Binding Phone}" FontSize="Medium" />
         </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <Button

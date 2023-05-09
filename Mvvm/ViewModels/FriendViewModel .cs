@@ -5,6 +5,7 @@ using System.ComponentModel;
 using Mvvm.Models;
 using Xamarin.Essentials;
 using static Xamarin.Essentials.Permissions;
+using Mvvm.ViewModels;
 
 namespace Mvvm.ViewModels
 {
@@ -25,7 +26,7 @@ namespace Mvvm.ViewModels
                 if (lvm != value)
                 {
                     lvm = value;
-                    OnPropertyChaged("ListViewModel");
+                    OnPropertyChanged("ListViewModel");
                 }
             }
         }
@@ -37,7 +38,7 @@ namespace Mvvm.ViewModels
                 if (Friend.Name != value)
                 {
                     Friend.Name = value;
-                    OnPropertyChaged("Name");
+                    OnPropertyChanged("Name");
                 }
             }
         }
@@ -49,7 +50,7 @@ namespace Mvvm.ViewModels
                 if (Friend.Email != value)
                 {
                     Friend.Email = value;
-                    OnPropertyChaged("Email");
+                    OnPropertyChanged("Email");
                 }
             }
         }
@@ -61,7 +62,7 @@ namespace Mvvm.ViewModels
                 if (Friend.Phone != value)
                 {
                     Friend.Phone = value;
-                    OnPropertyChaged("Phone");
+                    OnPropertyChanged("Phone");
                 }
             }
         }
@@ -74,11 +75,10 @@ namespace Mvvm.ViewModels
                 (!string.IsNullOrEmpty(Email.Trim())));
             }
         }
-
-        protected void OnPropertyChaged(string propName)
+        protected void OnPropertyChanged(string propName)
         {
             if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propName));
-            
         }
+
     }
 }

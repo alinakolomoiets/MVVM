@@ -11,9 +11,9 @@
                     <ViewCell>
                         <ViewCell.View>
                             <StackLayout>
-                                <Label Text="{Binding Name}" FontSize="Medium" TextColor="Red"/>
-                                <Label Text="{Binding Email}" FontSize="Small" TextColor="Red"/>
-                                <Label Text="{Binding Phone}" FontSize="Small" TextColor="Red"/>
+                                <Label Text="{Binding Name}" FontSize="Medium" />
+                                <Label Text="{Binding Email}" FontSize="Small" />
+                                <Label Text="{Binding Phone}" FontSize="Small" />
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>

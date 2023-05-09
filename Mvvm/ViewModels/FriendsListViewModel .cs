@@ -8,15 +8,18 @@ using System.Windows.Input;
 using System.Text;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
+
+
 namespace Mvvm.ViewModels
 {
     public class FriendsListViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+
         public ObservableCollection<FriendViewModel> Friends { get; set; }
         public ICommand CreateFriendCommand { protected set; get; }
-        public ICommand DeleteFriendCommand { protected set; get;  }
+        public ICommand DeleteFriendCommand { protected set; get; }
         public ICommand SaveFriendCommand { protected set; get; }
         public ICommand BackCommand { protected set; get; }
         FriendViewModel selectedFriend;
@@ -29,6 +32,7 @@ namespace Mvvm.ViewModels
             SaveFriendCommand = new Command(SaveFriend);
             BackCommand = new Command(Back);
         }
+
         public FriendViewModel SelectedFriend
         {
             get { return selectedFriend; }
@@ -38,12 +42,12 @@ namespace Mvvm.ViewModels
                 {
                     FriendViewModel tempFriend = value;
                     selectedFriend = null;
-                    OnPropertyChaged("SelectedFriend");
+                    OnPropertyChanged("SelectedFriend");
                     Navigation.PushAsync(new FriendPage(tempFriend));
                 }
             }
         }
-        protected void OnPropertyChaged(string propName)
+        protected void OnPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
@@ -64,6 +68,7 @@ namespace Mvvm.ViewModels
                 Friends.Add(friend);
             }
             Back();
+
         }
         private void DeleteFriend(object friendObject)
         {

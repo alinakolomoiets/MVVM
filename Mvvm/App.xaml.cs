@@ -1,16 +1,20 @@
 ﻿using Mvvm.Views;
+using Mvvm.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MVVM
+namespace Mvvm
 {
     public partial class App : Application
     {
         public App()
         {
+            InitializeComponent();
+
             MainPage = new NavigationPage(new FriendsListPage());
         }
+
         protected override void OnStart()
         {
         }
@@ -22,6 +26,5 @@ namespace MVVM
         protected override void OnResume()
         {
         }
-
     }
 }
