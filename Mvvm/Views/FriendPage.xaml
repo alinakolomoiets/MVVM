@@ -7,9 +7,9 @@
             <Label Text="Имя"/>
             <Entry Text="{Binding Name}" FontSize="Medium" />
             <Label Text="Электронная почта" />
-            <Entry Text="{Binding Email}" FontSize="Medium" />
+            <Entry Text="{Binding Email}" FontSize="Medium" Keyboard="Email"/>
             <Label Text="Телефон" />
-            <Entry Text="{Binding Phone}" FontSize="Medium" />
+            <Entry Text="{Binding Phone}" FontSize="Medium" Keyboard="Telephone" />
         </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <Button
